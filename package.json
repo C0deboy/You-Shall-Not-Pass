@@ -1,0 +1,31 @@
+{
+  "name": "WizardMovement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "build": "webpack",
+    "build:w": "webpack --watch",
+    "build:p": "webpack -p",
+    "serve": "webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "C0deboy",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "file-loader": "^1.1.5",
+    "uglify-es": "^3.2.2",
+    "uglifyjs-webpack-plugin": "^1.1.4",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}

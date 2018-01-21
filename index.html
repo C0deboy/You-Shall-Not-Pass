@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en"><title>You Shall Not Pass</title>
+  <meta content='user-scalable=0' name='viewport'/>
+  <style>body, #gameBox {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333333;
+  }
+
+  #game {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAACVBMVEUnrmAkoVkpuWUJvvOWAAAAOklEQVQY02MIYAADVgY4g4GLAQrgDKgEGgMLWIDBQAEBMM0ByKasIoKBAdCdg91mFK9gUxKAysAIDQCMRQlDnW0yRgAAAABJRU5ErkJggg==') repeat;
+    box-shadow: 0 -6px 9px 0 black;
+    width: 960px;
+    max-width: 100%;
+    max-height: calc(100% - 50px);
+  }
+
+  /*#gameBox:-webkit-full-screen {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*font-size: .6em;*/
+    /*background: black;*/
+  /*}*/
+
+  /*#gameBox:-webkit-full-screen #game,*/
+  /*#gameBox:-webkit-full-screen #ui{*/
+    /*width: 100%;*/
+  /*}*/
+
+  #ui {
+    background: #020704;
+    box-sizing: border-box;
+    width: 960px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 -2px 6px 1px black;
+  }
+
+  #health, #mana {
+    box-sizing: border-box;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-size: 2em;
+    text-align: center;
+    line-height: 45px;
+    border: 3px solid #562403;
+  }
+
+  #health {
+    background: linear-gradient(to bottom, #cb356b, #bd150c);
+  }
+
+  #mana {
+    background: linear-gradient(to bottom, #36d1dc, #5b86e5);
+  }
+
+  #turnInfo {
+    height: 100%;
+    color: white;
+  }
+
+  button, .difficulty p, #infoHolder {
+    background: brown;
+    border: 3px solid #562403;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 180%;
+    cursor: pointer;
+  }
+
+  .button:first-of-type {
+    border: 2px solid #5b86e5;
+  }
+
+  #infoHolder {
+    position: fixed;
+    background: brown;
+    width: 200px;
+    z-index: 999;
+    padding: 5px;
+    border: 3px solid #562403;
+    display: none;
+  }
+
+  .difficulty {
+    position: absolute;
+    top: 200px;
+    margin: auto;
+  }
+
+  </style>
+
+</head>
+<body>
+
+<div id="gameBox">
+  <canvas id="game" width="960" height="640"></canvas>
+
+  <div id="ui">
+    <div id="health"></div>
+    <div class="spells">
+      <button onclick="setSpell(3, this)">Lightning (3)</button>
+      <button onclick="setSpell(5, this)">Fireball (5)</button>
+      <button onclick="setSpell(2, this)">Freeze (2)</button>
+    </div>
+    <div id="turnInfo">
+      <div id="turn"></div>
+    </div>
+    <button onclick="restartLevel()">Restart <br> Level</button>
+    <div id="mana"></div>
+  </div>
+
+  <div id="infoHolder"></div>
+
+
+
+  <div class="difficulty">
+    <h1>Choose difficulty level:</h1>
+    <p onclick="setDifficulty(1)">Easy</p>
+    <p onclick="setDifficulty(2)">Medium</p>
+    <p onclick="setDifficulty(3)">Hard</p>
+  </div>
+</div>
+
+
+<script src="dist/bundle.js"></script>
+</body>
+</html>
