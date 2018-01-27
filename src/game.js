@@ -37,8 +37,7 @@ function newWorldLevel(n) {
   map = world.getMap();
   turnSystem = new TurnSystem();
   player = new Player();
-  player.health = 30 /(nextLevelDifficulty / 1.2 * 2) + 10;
-  console.log(player.health);
+  player.health = Math.round(50 - nextLevelDifficulty * 2 / 1.2 * 10);
   UI.updateUI(player, turnSystem);
   enemies = [];
   if (visibleEndTile) {
@@ -131,7 +130,6 @@ function nextTurnActions() {
       enemy.freezed = false;
     });
   }, 1200);
-
 
 
   checkIfPlayerHasDied();
